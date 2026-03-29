@@ -2,8 +2,6 @@
 
 LIVE-PREVIWE
 
-https://livhast.netlify.app
-
 SCREENSHOTS 
 ____________________________________________________________
 
