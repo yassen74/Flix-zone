@@ -1,0 +1,68 @@
+const API_BASE_URL =
+    window.MOVIE_API_BASE_URL ||
+    (window.location.port === '5000' ? window.location.origin : 'http://localhost:5000');
+
+function createMovieCard(movie) {
+    const card = document.createElement('div');
+    card.className = 'movie-card';
+
+    const image = document.createElement('img');
+    image.src = movie.poster_url || '/Front-page/pos1.jpg';
+    image.alt = movie.title || 'Movie Poster';
+
+    const title = document.createElement('span');
+    title.className = 'movie-title';
+    title.textContent = movie.title || 'Untitled Movie';
+
+    card.appendChild(image);
+    card.appendChild(title);
+
+    return card;
+}
+
+async function loadTrendingMovies() {
+    const movieCarousel = document.querySelector('.trending-now .movie-carousel');
+
+    if (!movieCarousel) {
+        return;
+    }
+
+    const fallbackCards = movieCarousel.innerHTML;
+
+    try {
+        const response = await fetch(`${API_BASE_URL}/api/movies`);
+
+        if (!response.ok) {
+            throw new Error(`Request failed with status ${response.status}`);
+        }
+
+        const result = await response.json();
+        const movies = Array.isArray(result.data) ? result.data : [];
+
+        if (!movies.length) {
+            return;
+        }
+
+        movieCarousel.innerHTML = '';
+        movies.forEach(movie => {
+            movieCarousel.appendChild(createMovieCard(movie));
+        });
+    } catch (error) {
+        console.error('Unable to load movies from the backend API.', error);
+        movieCarousel.innerHTML = fallbackCards;
+    }
+}
+
+// Toggle FAQ answers
+document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+        const answer = button.nextElementSibling;
+        if (answer.style.display === 'block') {
+            answer.style.display = 'none';
+        } else {
+            answer.style.display = 'block';
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', loadTrendingMovies);

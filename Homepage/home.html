@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlixZone</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gruppo&display=swap" rel="stylesheet">
+    <link rel="icon" href="Assets/52 (1).ico" type="image/x-icon">
+</head>
+<body>
+    <div class="scroll-container">
+        <header>
+            <nav>
+                <!-- <div class="logo-container">
+                    <img src="Assets/livhast..png" alt="FlixZone Logo">
+                </div> -->
+                <ul class="sidebar">
+                    <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26" fill="rgb(245, 245, 220)"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
+                    <li><a href="#hero-section">Home</a></li>
+                    <li><a href="#best-picks">Movies</a></li>
+                    <li><a href="#top-rated">Top Rated</a></li>
+                    <li><a href="#my-list">My List</a></li>
+                    <li><button class="login-btn" type="button">Login</button></li>
+                    <li><button class="signup-btn" type="button">Sign Up</button></li> 
+                  </ul>
+                <ul>
+                    <li><a href="#hero-section">FlixZone.</a></li>
+                    <li class="hideOnMobile"><a href="#hero-section">Home</a></li>
+                    <li class="hideOnMobile"><a href="#best-picks">Movies</a></li>
+                    <li class="hideOnMobile"><a href="#top-rated">Top Rated</a></li>
+                    <li class="hideOnMobile"><a href="#my-list">My List</a></li>
+                    <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26" fill="rgb(245, 245, 220)"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
+                </ul>
+                    <div class="auth-buttons">
+                        <button class="login-btn" type="button">Login</button>
+                        <button class="signup-btn" type="button">Sign Up</button>
+                    </div>
+            </nav>
+        </header>
+     
+    <main>
+        <div class="contain">
+        <section class="featured-movie" id="hero-section">
+            <div class="movie-info">
+                <span class="badge" id="hero-badge">FEATURED</span>
+                <p class="hero-meta" id="hero-meta">Action / Sci-fi | 2013 | 2h 23m</p>
+                <h1 id="hero-title">Man Of Steel</h1>
+                <div class="rating">
+                    <span id="hero-rating-label">IMDB</span>
+                    <span id="hero-rating-value">8.2 (12,827)</span>
+                </div>
+                <p class="description" id="hero-description">
+                    Action/Sci-fi | 2013 | 2 hour 23 minutes
+                    <br>"Man of Steel" is a 2013 superhero film starring Henry Cavill as Superman. It tells the story of an alien child, Kal-El, who is sent to Earth from his dying planet. As he grows up as Clark Kent, he must keep his powers hidden, but when an evil general threatens Earth, he becomes the hero known as Superman.
+                </p>
+                <div class="hero-actions">
+                    <button class="hero-button hero-button--primary" id="hero-trailer-button" type="button">Watch Trailer</button>
+                    <button class="hero-button hero-button--ghost" id="hero-browse-button" type="button">Browse Picks</button>
+                </div>
+                <p class="hero-status hidden" id="hero-status" aria-live="polite"></p>
+                <div class="hero-indicators" id="hero-indicators" aria-label="Featured movie selector"></div>
+            </div>
+            <video id="kraven-video" class="hover-video" muted loop playsinline>
+                <source src="Assets/First.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+        
+        <section class="movie-carousel-container" id="best-picks">
+            <h2 class="bp">Best Picks</h2>
+            <button class="prev">&lt;</button> <div class="movie-carousel">
+                <img src="Assets/Rectangle 6.png" alt="Movie 1">
+                <img src="Assets/pos5.jpg" alt="Movie 2">
+                <img src="Assets/pos1.jpg" alt="Movie 3">
+                <img src="Assets/pos2.jpg" alt="Movie 4">
+                <img src="Assets/pos3.jpg" alt="Movie 5">
+                <img src="Assets/pos6.jpg" alt="Movie 6">
+                <img src="Assets/Pos7.jpeg" alt="Movie 6">
+                <img src="Assets/pos8.jpeg" alt="Movie 6">
+                <img src="Assets/pos9.jpeg" alt="Movie 6">
+                <img src="Assets/pos3.jpg" alt="Movie 6">
+                </div>
+            <button class="next">&gt;</button> </section>
+            <section class="movie-carousel-container" id="top-rated">
+                <h2 class="bp">Top Rated</h2>
+                <button class="prev1">&lt;</button> <div class="movie-carousel1">
+                    <img src="Assets/Rectangle 6.png" alt="Movie 1">
+                    <img src="Assets/Pos7.jpeg" alt="Movie 6">
+                    <img src="Assets/pos8.jpeg" alt="Movie 6">
+                    <img src="Assets/pos9.jpeg" alt="Movie 6">
+                    <img src="Assets/pos3.jpg" alt="Movie 6">
+                    <img src="Assets/pos5.jpg" alt="Movie 2">
+                    <img src="Assets/pos1.jpg" alt="Movie 3">
+                    <img src="Assets/pos2.jpg" alt="Movie 4">
+                    <img src="Assets/pos3.jpg" alt="Movie 5">
+                    <img src="Assets/pos6.jpg" alt="Movie 6">
+                    </div>
+                <button class="next1">&gt;</button> </section>
+                <section class="my-list-section" id="my-list">
+                    <div class="my-list-section__copy">
+                        <span class="badge badge--subtle">MY LIST</span>
+                        <h2>Your next movie night starts here.</h2>
+                        <p>Save favorites after sign in and come back to them fast. Until then, browse the featured picks and top rated lineup.</p>
+                    </div>
+                    <button class="hero-button hero-button--ghost" id="my-list-browse-button" type="button">Browse Movies</button>
+                </section>
+                </div>
+    </main> 
+
+    <footer id="site-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>FlixZone brings cinematic picks, trending stories, and a cleaner streaming-style browsing experience to one dark, polished homepage.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#hero-section">Home</a></li>
+                    <li><a href="#best-picks">Movies</a></li>
+                    <li><a href="#top-rated">Top Rated</a></li>
+                    <li><a href="#my-list">My List</a></li>
+                    <li><a href="#site-footer">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="Assets/facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="Assets/twitter.png" alt="Twitter"></a>
+                    <a href="#"><img src="Assets/instagram.png" alt="Instagram"></a>
+                    <a href="#"><img src="Assets/youtube.png" alt="YouTube"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 FlixZone. All rights reserved.</p>
+        </div>
+    </footer>
+    </div>
+
+    <div class="profile-panel hidden" id="profile-panel" aria-hidden="true" hidden>
+        <div class="profile-panel__overlay" data-profile-close="true"></div>
+        <div class="profile-panel__card" role="dialog" aria-modal="true" aria-labelledby="profile-panel-title">
+            <button class="profile-panel__close" id="profile-panel-close" type="button" aria-label="Close profile panel">&times;</button>
+            <p class="profile-panel__eyebrow">Member Access</p>
+            <h2 id="profile-panel-title">FlixZone Profile</h2>
+            <p class="profile-panel__username" id="profile-panel-username">Guest</p>
+            <p class="profile-panel__email" id="profile-panel-email">Sign in to see your account details.</p>
+            <div class="profile-panel__actions">
+                <button class="profile-panel__button profile-panel__button--ghost" id="profile-panel-my-list" type="button">My List</button>
+                <button class="profile-panel__button" id="profile-panel-logout" type="button">Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="movie-modal hidden" id="movie-modal" aria-hidden="true" hidden>
+        <div class="movie-modal__overlay" data-movie-close="true"></div>
+        <div class="movie-modal__panel" role="dialog" aria-modal="true" aria-labelledby="movie-modal-title">
+            <button class="movie-modal__close" id="movie-modal-close" type="button" aria-label="Close movie details">&times;</button>
+            <div class="movie-modal__layout">
+                <img class="movie-modal__poster" id="movie-modal-poster" src="Assets/pos1.jpg" alt="Movie poster">
+                <div class="movie-modal__content">
+                    <p class="movie-modal__eyebrow" id="movie-modal-genre">Action / Adventure</p>
+                    <h2 id="movie-modal-title">Movie Title</h2>
+                    <div class="movie-modal__stats">
+                        <span id="movie-modal-year">2024</span>
+                        <span id="movie-modal-rating">7.8 / 10</span>
+                    </div>
+                    <p class="movie-modal__description" id="movie-modal-description">
+                        Movie details will appear here when you select a poster.
+                    </p>
+                    <p class="movie-modal__message hidden" id="movie-modal-message" aria-live="polite"></p>
+                    <div class="movie-modal__actions">
+                        <button class="movie-modal__button" id="movie-modal-trailer" type="button">Watch Trailer</button>
+                        <button class="movie-modal__button movie-modal__button--ghost" id="movie-modal-close-action" type="button">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="auth-modal hidden" id="auth-modal" aria-hidden="true" hidden>
+        <div class="auth-modal__overlay" data-auth-close="true"></div>
+
+        <div class="auth-modal__panel" role="dialog" aria-modal="true" aria-labelledby="auth-modal-title">
+            <button class="auth-modal__close" id="auth-modal-close" type="button" aria-label="Close authentication dialog">&times;</button>
+
+            <div class="auth-modal__header">
+                <p class="auth-modal__eyebrow">Account Access</p>
+                <h2 id="auth-modal-title">Welcome back</h2>
+                <p class="auth-modal__subtitle" id="auth-modal-subtitle">
+                    Log in or create an account to personalize your FlixZone experience.
+                </p>
+            </div>
+
+            <div class="auth-modal__tabs" role="tablist" aria-label="Authentication modes">
+                <button class="auth-modal__tab is-active" type="button" data-auth-mode="login" role="tab" aria-selected="true">
+                    Login
+                </button>
+                <button class="auth-modal__tab" type="button" data-auth-mode="signup" role="tab" aria-selected="false">
+                    Signup
+                </button>
+            </div>
+
+            <div class="auth-modal__message hidden" id="auth-modal-message" aria-live="polite"></div>
+
+            <form class="auth-modal__form" id="auth-login-form" novalidate>
+                <div class="auth-modal__field">
+                    <label for="auth-login-email">Email</label>
+                    <input id="auth-login-email" name="email" type="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="auth-modal__field">
+                    <label for="auth-login-password">Password</label>
+                    <input id="auth-login-password" name="password" type="password" placeholder="Enter your password" required>
+                </div>
+
+                <div class="auth-modal__actions">
+                    <button class="auth-modal__submit" type="submit">Login</button>
+                </div>
+            </form>
+
+            <form class="auth-modal__form hidden" id="auth-signup-form" novalidate>
+                <div class="auth-modal__field">
+                    <label for="auth-signup-username">Username</label>
+                    <input id="auth-signup-username" name="username" type="text" placeholder="Choose a username" required>
+                </div>
+
+                <div class="auth-modal__field">
+                    <label for="auth-signup-email">Email</label>
+                    <input id="auth-signup-email" name="email" type="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="auth-modal__field">
+                    <label for="auth-signup-password">Password</label>
+                    <input id="auth-signup-password" name="password" type="password" placeholder="Create a password" required>
+                </div>
+
+                <div class="auth-modal__actions">
+                    <button class="auth-modal__submit" type="submit">Create Account</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../frontend-api.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

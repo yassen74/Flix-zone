@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streaming Service Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="Front-page/52 (1).ico" type="image/x-icon">
+</head>
+<body>
+    <div class="custom-loader"></div>
+    <!-- Header Section -->
+    <header class="header">
+        <div><h3 class="logo">Livhast.</h3>
+        <a href="/Internet-Speed/index.html"><button class="shiny-button">Check-Internet</button></a></div>
+        <div class="container1">
+            <div class="headercon">
+                <h1>Unlimited movies, TV shows and more</h1>
+                <p>Watch anywhere. Cancel anytime.</p>
+                <p>Ready to watch? Enter your email to create or restart your membership.</p>
+                <div class="email-form">
+                    <input type="email" placeholder="Email address">
+                    <a href="/Homepage/home.html">
+                    <button>Get Started ></button></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Trending Now Section -->
+    <section class="trending-now">
+        <div class="container">
+            <h2>Trending Now</h2>
+            <div class="movie-carousel">
+                <!-- Movie cards -->
+                <div class="movie-card">
+                    <img src="/Front-page/pos1.jpg" alt="TENET">
+                    <span class="movie-title">TENET</span>
+                </div>
+                <div class="movie-card">
+                    <img src="/Front-page/pos2.jpg" alt="96">
+                    <span class="movie-title">96</span>
+                </div>
+                <div class="movie-card">
+                    <img src="/Front-page/pos3.jpg" alt="JOKER">
+                    <span class="movie-title">JOKER</span>
+                </div>
+
+                <div class="movie-card">
+                    <img src="/Front-page/pos8.jpeg" alt="Movie 3">
+                    <span class="movie-title">CONFUSED</span>
+                </div>
+
+                <div class="movie-card">
+                    <img src="/Front-page/pos5.jpg" alt="Movie 3">
+                    <span class="movie-title">UNCHARTED</span>
+                </div>
+
+                <div class="movie-card">
+                    <img src="/Front-page/pos6.jpg" alt="Movie 3">
+                    <span class="movie-title">THE ADAM PROJECT</span>
+                </div>
+
+                <div class="movie-card">
+                    <img src="/Front-page/Pos7.jpeg" alt="Movie 3">
+                    <span class="movie-title">ALADDIN</span>
+                </div>
+                <div class="movie-card">
+                    <img src="/Front-page/pos8.jpeg" alt="Movie 3">
+                    <span class="movie-title">Movie Title 3</span>
+                </div>
+                <div class="movie-card">
+                    <img src="/Front-page/pos9.jpeg" alt="Movie 3">
+                    <span class="movie-title">Movie Title 3</span>
+                </div>
+                <!-- Repeat for more movies -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Reasons to Join Section -->
+    <section class="reasons-to-join">
+        <div class="container">
+            <h2>More reasons to join</h2>
+            <div class="reasons">
+                <div class="reason">
+                    <h3>Enjoy on your TV</h3>
+                    <p>Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.</p>
+                </div>
+                <div class="reason">
+                    <h3>Download your shows to watch offline</h3>
+                    <p>Save your favorites easily and always have something to watch.</p>
+                </div>
+                <div class="reason">
+                    <h3>Watch everywhere</h3>
+                    <p>Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <button class="faq-question">What is this service?</button>
+                <div class="faq-answer">This service offers unlimited movies, TV shows, and more.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">How much does it cost?</button>
+                <div class="faq-answer">You can watch for as low as $9.99 a month.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Where can I watch?</button>
+                <div class="faq-answer">You can watch on any internet-connected device, like a TV, smartphone, tablet, or computer.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <p>Questions? Call 000-000-0000</p>
+            <div class="footer-links">
+                <a href="#">FAQ</a>
+                <a href="#">Privacy</a>
+                <a href="/Internet-Speed/index.html">Speed Test</a>
+                <a href="#">Legal Notices</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Livhast. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>    window.addEventListener('load', function() {
+        document.querySelector('.custom-loader').style.display = 'none';
+    });</script>
+    <script src="script.js"></script>
+</body>
+</html>
