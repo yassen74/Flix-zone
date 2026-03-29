@@ -19,34 +19,45 @@ systemctl enable nginx
 systemctl start nginx
 
 cd /home/ubuntu
+rm -rf /home/ubuntu/app
 git clone https://github.com/yassen74/Flix-zone.git app
 chown -R ubuntu:ubuntu /home/ubuntu/app
+chmod -R o+rx /home/ubuntu
+chmod -R o+rx /home/ubuntu/app
 
 cd /home/ubuntu/app/backend
 npm install
+nohup node src/server.js > /home/ubuntu/app/backend/app.log 2>&1 &
 
-nohup node src/server.js > app.log 2>&1 &
-
-cat > /etc/nginx/sites-available/flixzone <<EOL
+cat > /etc/nginx/sites-available/flixzone <<'EOL'
 server {
     listen 80;
+    server_name _;
 
     root /home/ubuntu/app/Homepage;
-    index home.html;
+    index home.html index.html;
+
+    location = / {
+        try_files /home.html =404;
+    }
 
     location / {
-        try_files \$uri \$uri/ /home.html;
+        try_files $uri $uri/ =404;
     }
 
     location /api/ {
         proxy_pass http://127.0.0.1:5000;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     }
 }
 EOL
 
 ln -sf /etc/nginx/sites-available/flixzone /etc/nginx/sites-enabled/flixzone
 rm -f /etc/nginx/sites-enabled/default || true
-
+nginx -t
 systemctl restart nginx
 EOF2
 
