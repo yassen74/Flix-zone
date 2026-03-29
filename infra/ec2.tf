@@ -9,44 +9,46 @@ resource "aws_instance" "app" {
   vpc_security_group_ids = [aws_security_group.app_sg.id]
 
   user_data = <<-EOF2
-              #!/bin/bash
-              set -eux
+#!/bin/bash
+set -eux
 
-              dnf update -y
-              dnf install -y nginx git nodejs
+apt update -y
+apt install -y nginx git nodejs npm
 
-              systemctl enable nginx
-              systemctl start nginx
+systemctl enable nginx
+systemctl start nginx
 
-              cd /home/ec2-user
-              git clone https://github.com/yassen74/Flix-zone.git app
-              chown -R ec2-user:ec2-user /home/ec2-user/app
+cd /home/ubuntu
+git clone https://github.com/yassen74/Flix-zone.git app
+chown -R ubuntu:ubuntu /home/ubuntu/app
 
-              cd /home/ec2-user/app/backend
-              npm install
+cd /home/ubuntu/app/backend
+npm install
 
-              nohup node src/server.js > app.log 2>&1 &
+nohup node src/server.js > app.log 2>&1 &
 
-              cat > /etc/nginx/conf.d/flixzone.conf <<EOL
-              server {
-                  listen 80;
+cat > /etc/nginx/sites-available/flixzone <<EOL
+server {
+    listen 80;
 
-                  root /home/ec2-user/app/Homepage;
-                  index home.html;
+    root /home/ubuntu/app/Homepage;
+    index home.html;
 
-                  location / {
-                      try_files \$uri \$uri/ /home.html;
-                  }
+    location / {
+        try_files \$uri \$uri/ /home.html;
+    }
 
-                  location /api/ {
-                      proxy_pass http://127.0.0.1:5000;
-                  }
-              }
-              EOL
+    location /api/ {
+        proxy_pass http://127.0.0.1:5000;
+    }
+}
+EOL
 
-              rm -f /etc/nginx/conf.d/default.conf || true
-              systemctl restart nginx
-              EOF2
+ln -sf /etc/nginx/sites-available/flixzone /etc/nginx/sites-enabled/flixzone
+rm -f /etc/nginx/sites-enabled/default || true
+
+systemctl restart nginx
+EOF2
 
   tags = {
     Name = "flixzone-app"
